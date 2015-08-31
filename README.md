@@ -1,2 +1,2 @@
 # syncme
-Sync data between Mobile and desktop via websocket
+Send data between Mobile and desktop via HTML5 + websocket
