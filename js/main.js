@@ -170,6 +170,7 @@ logo.style.transform =
   function hideQr(){
     document.getElementById('qr_code').style.display = 'none';
     document.getElementById('device').style.display = 'block';
+    $('#circle').show();
   }
   function newroom(room)
   {
