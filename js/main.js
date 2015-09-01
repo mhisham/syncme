@@ -121,8 +121,8 @@ logo.style.transform =
       deviceType = 'mobile';
     }
     
-    // var socket = io('http://'+window.location.hostname+':88');
-    var socket = io('http://think.mhisham.net:88');
+    var socket = io('http://'+window.location.hostname+':88');
+    // var socket = io('http://think.mhisham.net:88');
     if(roomNum == null)
     {
       socket.emit('join',{'type':deviceType});
