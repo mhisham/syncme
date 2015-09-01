@@ -73,7 +73,34 @@ logo.style.webkitTransform =
 logo.style.MozTransform = "rotate("+ tiltLR +"deg)";
 logo.style.transform =
   "rotate("+ tiltLR +"deg) rotate3d(1,0,0, "+ (tiltFB*-1)+"deg)";
-    
+    work2(tiltLR,tiltFB,dir);
+  }
+
+  function work2(leftRight,frontBack,dir)
+  {
+    var baseW  = $( window ).width()/2 - (101/2);
+    var baseH  = $( window ).height()/2 - (101/2);
+      var x = baseW + ((frontBack * 180)/5);
+      var y = baseH + ((leftRight * 180)/5);
+      if(x + 101 >= $( window ).width()){
+        x = $( window ).width() - 101;
+      }
+
+      if(y + 101 >= $( window ).height())
+      {
+        y = $( window ).height() - 101;
+      }
+
+      if(x < 0)
+      {
+        x = 0;
+      }
+
+      if(y < 0)
+      {
+        y = 0;
+      }
+      $('#circle').css({left:x,top:y});
   }
   
   if(isMobile()){
@@ -94,7 +121,8 @@ logo.style.transform =
       deviceType = 'mobile';
     }
     
-    var socket = io('http://'+window.location.hostname+':88');
+    // var socket = io('http://'+window.location.hostname+':88');
+    var socket = io('http://think.mhisham.net:88');
     if(roomNum == null)
     {
       socket.emit('join',{'type':deviceType});
